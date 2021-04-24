@@ -1,0 +1,18 @@
+<div class="navbar">
+    <nav class="main-nav">
+        <a href="/" class="company-name">MyRecipe</a>
+        <ul class="links">
+            <% if(user) { %>
+                <li>
+                    <%= user.email %>
+                </li>
+                <li><a href="/auth/logout" class="link btn">log out</a></li>
+                <% } else { %>
+                    <li><a href="/auth/login" class="link btn">Log in</a></li>
+                    <li><a href="/auth/signup" class="link btn">Sign Up</a></li>
+                    <% } %>
+        </ul>
+
+
+    </nav>
+</div>

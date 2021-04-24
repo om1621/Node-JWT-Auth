@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <%- include('partials/header') %>
+
+        <section class="form-section">
+            <form class="form">
+                <h2 class="form__header mb-2">Sign Up</h2>
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email" placeholder="abc@gmail.com">
+                <div class="err-email err"></div>
+                <label for="password">password</label>
+                <input type="password" name="password" id="password" placeholder="password">
+                <div class="err-password err"></div>
+                <button class="btn mt-2">Sign up</button>
+            </form>
+        </section>
+
+        <%- include('partials/footer') %>
+
+            <script>
+                const form = document.querySelector('form');
+                const emailError = document.querySelector('.err-email');
+                const passwordError = document.querySelector('.err-password');
+
+                form.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+
+                    emailError.textContent = '';
+                    passwordError.textContent = '';
+
+                    const email = form.email.value;
+                    const password = form.password.value;
+
+                    try {
+                        const res = await fetch('/auth/signup', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({ email, password }),
+                        });
+
+                        const data = await res.json();
+                        console.log(data);
+
+                        if (data.email || data.password) {
+                            emailError.textContent = data.email;
+                            passwordError.textContent = data.password;
+                        }
+                        else {
+                            location.assign('/');
+                        }
+                    }
+                    catch (err) {
+                        console.log(err);
+                    }
+                })
+            </script>
+</body>
+
+</html>

@@ -1,0 +1,247 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    box-sizing: border-box;
+    color: #535353;
+    background-color: #eee;
+}
+
+.navbar {
+    padding: 2rem;
+    max-width: 145rem;
+    margin: 0 auto;
+}
+
+nav {
+    display: block;
+}
+
+.company-name {
+    text-decoration: none;
+    font-size: 3rem;
+    color: #535353;
+    font-weight: 700;
+}
+
+.container {
+    max-width: 145rem;
+    margin: 0 auto;
+}
+
+.header {
+    min-height: 80vh;
+}
+
+.header__content {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: fit-content;
+}
+
+.header__content__box--image {
+    max-width: 22.5rem;
+    transform: translateY(3rem);
+}
+
+.header__content__box {
+    display: inline-block;
+    margin: 0 2rem;
+}
+
+.heading--primary {
+    font-size: 7rem;
+    margin-bottom: 2rem;
+}
+
+.heading--secondary {
+    font-size: 3.5rem;
+    color: #aaaaaa;
+    margin-bottom: 3rem;
+}
+
+.btn,
+.btn:link,
+.btn:visited {
+    padding: 1rem 2rem;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    background: #ffe2bc;
+    border: none;
+    color: #535353;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    border-radius: 100px;
+    transition: all 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+}
+
+.footer {
+    text-align: center;
+}
+
+.footer-text {
+    color: #aaaaaa;
+    font-size: 2rem;
+}
+
+.recipes {
+    max-width: 120rem;
+    margin: 0 auto;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media screen and (max-width: 720px) {
+    .recipes {
+        padding: 5%;
+    }
+
+    .header__content__box{
+        display: block;
+    }
+
+    .heading--primary {
+        margin-top: 3rem;
+    }
+}
+
+.recipes__row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+    grid-gap: 5.5rem 3.5rem;
+}
+
+.recipes__box {
+    background-color: #fff;
+    padding: 0 1.5rem 1rem 1.5rem;
+    text-align: center;
+    position: relative;
+    min-height: 16rem;
+    transition: all 0.4s;
+}
+
+.recipes__box:hover {
+    transform: scale(1.1);
+    box-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.2);
+}
+
+.recipe-box--content {
+    position: absolute;
+    top: 33%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.smoothie-icon {
+    width: 10rem;
+    margin-bottom: 0.75rem;
+}
+
+.recipe-name {
+    font-size: 2rem;
+    color: #535353;
+}
+
+.recipe-content {
+    font-size: 1.6rem;
+    color: #aaaaaa;
+}
+
+.form-section {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.form {
+    background: #fff;
+    padding: 3rem 3.5rem;
+    box-shadow: 0.5rem 1rem 1rem rgba(0, 0, 0, 0.1);  
+    width: 100%;
+    max-width: 40rem;
+    margin: 0 1rem;
+}
+
+.mb-2 {
+    margin-bottom: 3rem;
+}
+
+.mt-2 {
+    margin-top: 2rem;
+}
+
+.form__header {
+    font-size: 3.5rem;
+}
+
+label {
+    font-size: 1.5rem;
+    display: block;
+    margin: 1rem 0;
+    letter-spacing: 0.5px;
+}
+
+input {
+    width: 92%;
+    padding: 1rem 1rem;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    font-size: 1.4rem;
+    font-family: 'Lato', sans-serif;
+}
+
+.err {
+    font-size: 1.25rem;
+    color: orangered;
+    margin-top: 0.75rem;
+    letter-spacing: 0.5px;
+}
+
+.links {
+    list-style: none;
+    float: right;
+}
+
+.links li {
+    display: inline-block;
+    margin-left: 1.5rem;
+    font-size: 1.7rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+@media screen and (max-width: 440px) {
+    html {
+        font-size: 8px;
+    }
+
+    .company-name {
+        font-size: 2.5rem;
+    }
+}

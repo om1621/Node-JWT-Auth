@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyRecipe</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <%- include('partials/header') %>
+
+        <div class="container">
+            <header class="header">
+                <div class="header__content">
+                    <div class="header__content__box">
+                        <img src="/smoothie.png" alt="photo" class="header__content__box--image">
+                    </div>
+                    <div class="header__content__box header_content__box--text">
+                        <h1 class="heading--primary">My Recipes</h1>
+                        <h3 class="heading--secondary">By Ninja for Ninjas</h3>
+                        <a href="/recipes" class="btn">View Recipes</a>
+                    </div>
+                </div>
+            </header>
+
+            <%- include('partials/footer') %>
+        </div>
+
+
+
+</body>
+
+</html>
